@@ -37,12 +37,22 @@ struct ContentView: View {
                     Spacer()
                     VStack {
                         Text("Player")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .padding()
                         Text("0")
+                            .font(.largeTitle)
+                            .foregroundColor(Color.white)
                     }
                     Spacer()
                     VStack {
                         Text("CPU")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .padding()
                         Text("0")
+                            .font(.largeTitle)
+                            .foregroundColor(Color.white)
                     }
                     Spacer()
                 }
