@@ -25,16 +25,33 @@ struct ContentView: View {
                 HStack{
                     Spacer()
                     // Displays a card image based on the current value of the playerCard state variable
-                    Image("card5")
+                    Image(playerCard)
                     Spacer()
                     // Displays a card image based on the current value of the cpuCard state variable
-                    Image("card5")
+                    Image(cpuCard)
                     Spacer()
                 }
                 Spacer()
                 
                 Button {
-                    print("Button clicked!")
+                    // The following code will be run each time the button is clicked
+                    
+                    // The random method generates a random whole number from one specified Int to a second specified Int (Ex: Int.random (in: Int...Int))
+                    let playerRandom = Int.random(in: 2...14)
+                    
+                    let cpuRandom = Int.random(in: 2...14)
+                   
+                    // Updates the cards displayed on the app
+                    playerCard = "card" + String(playerRandom)
+                    cpuCard = "card" + String(cpuRandom)
+                    
+                    // Update the score
+                    if (playerRandom > cpuRandom){
+                        playerScore = playerScore + 1
+                    } else if (playerRandom < cpuRandom) {
+                        cpuScore = cpuScore + 1
+                    }
+                    
                 } label: {
                     Image("dealbutton")
                 }
